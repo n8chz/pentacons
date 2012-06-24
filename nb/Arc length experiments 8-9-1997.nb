@@ -1,0 +1,401 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      7480,        304]*)
+(*NotebookOutlinePosition[      8129,        327]*)
+(*  CellTagsIndexPosition[      8085,        323]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(A[y_] := 
+      \[Integral]\(\@\(\((\[PartialD]\_x\ y)\)^2 + 1\)\) \[DifferentialD]x\)],
+   "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Ae = A[\[ExponentialE]\^x]\)], "Input"],
+
+Cell[OutputFormData["\<\
+Sqrt[1 + E^(2*x)] - ArcTanh[Sqrt[1 + E^(2*x)]]\
+\>", "\<\
+               2 x               2 x
+-ArcTanh[Sqrt[E    + 1]] + Sqrt[E    + 1]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A[Log[x]]\)], "Input"],
+
+Cell[OutputFormData["\<\
+Sqrt[1 + x^(-2)]*x + (Sqrt[1 + x^(-2)]*x*Log[x])/
+   Sqrt[1 + x^2] - (Sqrt[1 + x^(-2)]*x*
+     Log[1 + Sqrt[1 + x^2]])/Sqrt[1 + x^2]\
+\>", "\<\
+        -2                  2
+  Sqrt[x   + 1] x Log[Sqrt[x  + 1] + 1]
+-(-------------------------------------) + 
+                    2
+              Sqrt[x  + 1]
+ 
+        -2
+  Sqrt[x   + 1] x Log[x]         -2
+  ---------------------- + Sqrt[x   + 1] x
+             2
+       Sqrt[x  + 1]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A[1/x]\)], "Input"],
+
+Cell[OutputFormData["\<\
+-(Sqrt[1 + x^(-4)]*x) + 
+  (2*I*Sqrt[1 + x^(-4)]*x^3*
+     EllipticE[ArcCos[I*x^2]/2, 2])/
+   (Sqrt[I*x^2]*Sqrt[1 + x^4])\
+\>", "\<\
+                                         2
+          -4       3           ArcCos[I x ]
+2 I Sqrt[x   + 1] x  EllipticE[------------, 2]
+                                    2
+----------------------------------------------- - 
+                    2        4
+            Sqrt[I x ] Sqrt[x  + 1]
+ 
+        -4
+  Sqrt[x   + 1] x\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A[\@x]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{
+        FractionBox[
+          RowBox[{
+            SqrtBox[
+              TagBox[\(1\/\(4\ x\) + 1\),
+                HoldForm]], " ", \(\@x\), " ", \(ArcSinh[2\ \@x]\)}], 
+          RowBox[{"2", " ", 
+            SqrtBox[
+              TagBox[\(4\ x + 1\),
+                HoldForm]]}]], "+", 
+        RowBox[{
+          SqrtBox[
+            TagBox[\(1\/\(4\ x\) + 1\),
+              HoldForm]], " ", "x"}]}],
+      HoldForm]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A[x^2]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{\(1\/4\ ArcSinh[2\ x]\), "+", 
+        RowBox[{\(1\/2\), " ", "x", " ", 
+          SqrtBox[
+            TagBox[\(4\ x\^2 + 1\),
+              HoldForm]]}]}],
+      HoldForm]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A[x^3]\)], "Input"],
+
+Cell[OutputFormData["\<\
+(x*Sqrt[1 + 9*x^4])/3 - 
+  (2*(-1)^(1/4)*EllipticF[ArcSin[(-1)^(3/4)*Sqrt[3]*x], 
+      -1])/(3*Sqrt[3])\
+\>", "\<\
+       1/4                      3/4
+-2 (-1)    EllipticF[ArcSin[(-1)    Sqrt[3] x], -1]
+--------------------------------------------------- + 
+                     3 Sqrt[3]
+ 
+            4
+  x Sqrt[9 x  + 1]
+  ----------------
+         3\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A[x^Pi]\)], "Input"],
+
+Cell[OutputFormData["\<\
+(x*Sqrt[1 + Pi^2*x^(-2 + 2*Pi)])/Pi + 
+  (2*(-1 + Pi)*x^3*Sqrt[1 + x^(2 - 2*Pi)/Pi^2]*
+     Sqrt[1 + Pi^2*x^(-2 + 2*Pi)]*
+     Hypergeometric2F1[(-2 + Pi)/(2*(-1 + Pi)), 1/2, 
+      1 + (-2 + Pi)/(2*(-1 + Pi)), -(x^(2 - 2*Pi)/Pi^2)]
+)/((2 - 2*Pi)*(-2 + Pi)*(x^2 + Pi^2*x^(2*Pi))) - 
+  (2*(-1 + Pi)*x^3*Sqrt[1 + x^(2 - 2*Pi)/Pi^2]*
+     Sqrt[1 + Pi^2*x^(-2 + 2*Pi)]*
+     Hypergeometric2F1[(-2 + Pi)/(2*(-1 + Pi)), 1/2, 
+      1 + (-2 + Pi)/(2*(-1 + Pi)), -(x^(2 - 2*Pi)/Pi^2)])/
+   ((2 - 2*Pi)*(-2 + Pi)*Pi*(x^2 + Pi^2*x^(2*Pi)))\
+\>", "\<\
+                      -2 Pi + 2
+              3      x
+(-2 (Pi - 1) x  Sqrt[---------- + 1] 
+                          2
+                        Pi
+ 
+            2  2 Pi - 2
+     Sqrt[Pi  x         + 1] 
+ 
+                         Pi - 2    1    Pi - 2
+     Hypergeometric2F1[----------, -, ---------- + 1, 
+                       2 (Pi - 1)  2  2 (Pi - 1)
+ 
+         -2 Pi + 2
+        x
+      -(----------)]) / 
+             2
+           Pi
+ 
+                               2  2 Pi    2
+   ((-2 Pi + 2) (Pi - 2) Pi (Pi  x     + x )) + 
+ 
+                       -2 Pi + 2
+               3      x
+  (2 (Pi - 1) x  Sqrt[---------- + 1] 
+                           2
+                         Pi
+ 
+            2  2 Pi - 2
+     Sqrt[Pi  x         + 1] 
+ 
+                         Pi - 2    1    Pi - 2
+     Hypergeometric2F1[----------, -, ---------- + 1, 
+                       2 (Pi - 1)  2  2 (Pi - 1)
+ 
+         -2 Pi + 2
+        x
+      -(----------)]) / 
+             2
+           Pi
+ 
+                            2  2 Pi    2
+   ((-2 Pi + 2) (Pi - 2) (Pi  x     + x )) + 
+ 
+           2  2 Pi - 2
+  x Sqrt[Pi  x         + 1]
+  -------------------------
+             Pi\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A[Sinh[x]]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-I\)\ \@2\ EllipticE[I\ x, 1\/2]\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(P[r_] := 
+      \[Integral]\(\@\(r\^2 + \((\[PartialD]\_\[Theta]\ r)\)\^2\)\) 
+          \[DifferentialD]\[Theta]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(P[Sin[\[Theta]]]\)], "Input"],
+
+Cell[BoxData[
+    \(\[Theta]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(P[\[Theta]]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{\(ArcSinh[\[Theta]]\/2\), "+", 
+        RowBox[{\(1\/2\), " ", "\[Theta]", " ", 
+          SqrtBox[
+            TagBox[\(\[Theta]\^2 + 1\),
+              HoldForm]]}]}],
+      HoldForm]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(P[\[ExponentialE]\^\[Theta]]\)], "Input"],
+
+Cell[BoxData[
+    \(\@2\ \@E\^\(2\ \[Theta]\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(A[3\ x]\)], "Input"],
+
+Cell[OutputFormData["\<\
+Sqrt[10]*x\
+\>", "\<\
+Sqrt[10] x\
+\>"], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"Microsoft Windows 3.0",
+ScreenRectangle->{{0, 800}, {0, 572}},
+WindowSize->{480, 448},
+WindowMargins->{{30, Automatic}, {1, Automatic}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1709, 49, 120, 3, 40, "Input"],
+
+Cell[CellGroupData[{
+Cell[1854, 56, 59, 1, 30, "Input"],
+Cell[1916, 59, 178, 5, 38, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2131, 69, 42, 1, 30, "Input"],
+Cell[2176, 72, 475, 16, 128, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2688, 93, 39, 1, 30, "Input"],
+Cell[2730, 96, 496, 16, 118, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3263, 117, 39, 1, 33, "Input"],
+Cell[3305, 120, 480, 16, 71, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3822, 141, 39, 1, 30, "Input"],
+Cell[3864, 144, 225, 7, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4126, 156, 39, 1, 30, "Input"],
+Cell[4168, 159, 396, 14, 108, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4601, 178, 40, 1, 30, "Input"],
+Cell[4644, 181, 1754, 61, 498, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6435, 247, 43, 1, 30, "Input"],
+Cell[6481, 250, 68, 1, 42, "Output"]
+}, Open  ]],
+Cell[6564, 254, 146, 3, 40, "Input"],
+
+Cell[CellGroupData[{
+Cell[6735, 261, 49, 1, 30, "Input"],
+Cell[6787, 264, 42, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6866, 270, 44, 1, 30, "Input"],
+Cell[6913, 273, 237, 7, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7187, 285, 61, 1, 31, "Input"],
+Cell[7251, 288, 59, 1, 34, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7347, 294, 40, 1, 30, "Input"],
+Cell[7390, 297, 74, 4, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+
