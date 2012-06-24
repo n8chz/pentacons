@@ -1,0 +1,583 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     10879,        412]*)
+(*NotebookOutlinePosition[     11530,        435]*)
+(*  CellTagsIndexPosition[     11486,        431]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(-2\), " ", 
+      RowBox[{"Cosh", "[", 
+        TagBox[\(\(-\[ImaginaryI]x\) + x\),
+          HoldForm], "]"}]}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{
+        RowBox[{"{", 
+          RowBox[{
+            FractionBox["1", 
+              TagBox[
+                RowBox[{\(E\^\[ImaginaryI]x\), "+", 
+                  SuperscriptBox["E", 
+                    TagBox[\(\(-\[ImaginaryI]x\) + 2\ x\),
+                      HoldForm]]}],
+                HoldForm]], ",", 
+            FractionBox["1", 
+              TagBox[
+                RowBox[{
+                  SuperscriptBox["E", 
+                    TagBox[\(2\ \[ImaginaryI]x - x\),
+                      HoldForm]], "+", \(E\^x\)}],
+                HoldForm]]}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{
+            FractionBox["1", 
+              TagBox[
+                RowBox[{
+                  SuperscriptBox["E", 
+                    TagBox[\(\[ImaginaryI]x - 2\ x\),
+                      HoldForm]], "+", \(E\^\(-\[ImaginaryI]x\)\)}],
+                HoldForm]], ",", 
+            RowBox[{"-", 
+              FractionBox[
+                SuperscriptBox["E", 
+                  TagBox[\(2\ \[ImaginaryI]x + x\),
+                    HoldForm]], 
+                TagBox[\(E\^\(2\ \[ImaginaryI]x\) + E\^\(2\ x\)\),
+                  HoldForm]]}]}], "}"}]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    TagBox[\(\(-Cosh[x]\)\ Sinh[x] + Cos[x]\ Sin[x]\),
+      HoldForm]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    \(x\/E\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    \(\(-\(x\/E\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    \(\(-E\^\(x\^4\)\)\ x\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(1\/2\), " ", 
+      RowBox[{"(", 
+        TagBox[\(E\^\(1/4\)\ \@\[Pi]\ Erf[1\/2] + 2\),
+          HoldForm], ")"}]}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(1\/4\), " ", 
+      RowBox[{"(", 
+        TagBox[\(3\ E\^\(1/4\)\ \@\[Pi]\ Erf[1\/2] + 2\),
+          HoldForm], ")"}]}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    FractionBox["1", 
+      RowBox[{
+        SuperscriptBox[
+          RowBox[{"(", 
+            TagBox[\(n - 1\),
+              HoldForm], ")"}], "2"], " ", 
+        RowBox[{"Gamma", "[", 
+          TagBox[\(n - 1\),
+            HoldForm], "]"}]}]]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    RowBox[{"-", 
+      RowBox[{\(1\/\(3\ \@E\)\), 
+        RowBox[{"(", 
+          RowBox[{\(\((\(-1\))\)\^\(2/3\)\), " ", 
+            RowBox[{"(", 
+              
+              TagBox[\(\((\(-1\))\)\^\(1/6\)\ Sin[\@3\/2] + I\ Sin[\@3\/2] - 
+                  \((\(-1\))\)\^\(2/3\)\ Cos[\@3\/2] - Cos[\@3\/2] + 
+                  \((\(-1\))\)\^\(1/3\)\ E\^\(3/2\)\),
+                HoldForm], ")"}]}], ")"}]}]}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(1\/4\), " ", 
+      RowBox[{"(", 
+        TagBox[
+          \(\@\(2\ \[Pi]\)\ BesselJ[1\/2, 1] + 
+            \@\(2\ \[Pi]\)\ BesselI[1\/2, 1]\),
+          HoldForm], ")"}]}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    \(\@\(\[Pi]\/2\)\ BesselI[1\/2, 1]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[Sum]\+\(k = 0\)\%\[Infinity] k\/Factorial[k]\)], "Input"],
+
+Cell[BoxData[
+    \(E\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[Sum]\+\(k = 0\)\%\[Infinity] k\^2\/Factorial[k]\)], "Input"],
+
+Cell[BoxData[
+    \(2\ E\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[Sum]\+\(k = 0\)\%\[Infinity] k\^3\/Factorial[k]\)], "Input"],
+
+Cell[BoxData[
+    \(5\ E\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[Sum]\+\(k = 0\)\%\[Infinity] k\^4\/Factorial[k]\)], "Input"],
+
+Cell[BoxData[
+    \(15\ E\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[Sum]\+\(k = 0\)\%\[Infinity] k\^5\/Factorial[k]\)], "Input"],
+
+Cell[BoxData[
+    \(52\ E\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[Sum]\+\(k = 0\)\%\[Infinity] k\^6\/Factorial[k]\)], "Input"],
+
+Cell[BoxData[
+    \(203\ E\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[Sum]\+\(k = 0\)\%\[Infinity] k\^7\/Factorial[k]\)], "Input"],
+
+Cell[BoxData[
+    \(877\ E\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    \(5\ E\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[""], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[Sum]\+\(k = 0\)\%\[Infinity] k\^8\/Factorial[k]\)], "Input"],
+
+Cell[BoxData[
+    \(4140\ E\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[Sum]\+\(k = 0\)\%\[Infinity] k\^9\/Factorial[k]\)], "Input"],
+
+Cell[BoxData[
+    \(21147\ E\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{
+        RowBox[{
+          RowBox[{"(", 
+            TagBox[
+              RowBox[{
+                RowBox[{
+                  RowBox[{"(", 
+                    TagBox[
+                      RowBox[{
+                        RowBox[{
+                          RowBox[{"(", 
+                            TagBox[
+                              RowBox[{
+                                RowBox[{
+                                  RowBox[{"(", 
+                                    TagBox[
+                                      RowBox[{
+                                        RowBox[{
+                                        RowBox[{"(", 
+                                        TagBox[
+                                        RowBox[{
+                                        RowBox[{
+                                        RowBox[{"(", 
+                                        TagBox[
+                                        RowBox[{
+                                        RowBox[{
+                                        RowBox[{"(", 
+                                        TagBox[
+                                        RowBox[{
+                                        FractionBox[
+                                        RowBox[{"23", " ", 
+                                        RowBox[{"(", 
+                                        TagBox[\(x - 8\),
+                                        HoldForm], ")"}]}], "224"], "+", 
+                                        \(877\/5040\)}],
+                                        HoldForm], ")"}], " ", 
+                                        RowBox[{"(", 
+                                        TagBox[\(x - 7\),
+                                        HoldForm], ")"}]}], "+", 
+                                        \(203\/720\)}],
+                                        HoldForm], ")"}], " ", 
+                                        RowBox[{"(", 
+                                        TagBox[\(x - 6\),
+                                        HoldForm], ")"}]}], "+", \(13\/30\)}],
+                                        
+                                        HoldForm], ")"}], " ", 
+                                        RowBox[{"(", 
+                                        TagBox[\(x - 5\),
+                                        HoldForm], ")"}]}], "+", \(5\/8\)}],
+                                      HoldForm], ")"}], " ", 
+                                  RowBox[{"(", 
+                                    TagBox[\(x - 4\),
+                                      HoldForm], ")"}]}], "+", \(5\/6\)}],
+                              HoldForm], ")"}], " ", 
+                          RowBox[{"(", 
+                            TagBox[\(x - 3\),
+                              HoldForm], ")"}]}], "+", "1"}],
+                      HoldForm], ")"}], " ", 
+                  RowBox[{"(", 
+                    TagBox[\(x - 2\),
+                      HoldForm], ")"}]}], "+", "1"}],
+              HoldForm], ")"}], " ", 
+          RowBox[{"(", 
+            TagBox[\(x - 1\),
+              HoldForm], ")"}]}], "+", "1"}],
+      HoldForm]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[Sum]\+\(k = 0\)\%\[Infinity] k\^10\/Factorial[k]\)], "Input"],
+
+Cell[BoxData[
+    \(115975\ E\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[Sum]\+\(k = 0\)\%\[Infinity] k\^11\/Factorial[k]\)], "Input"],
+
+Cell[BoxData[
+    \(678570\ E\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[Sum]\+\(k = 0\)\%\[Infinity] k\^12\/Factorial[k]\)], "Input"],
+
+Cell[BoxData[
+    \(4213597\ E\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"Microsoft Windows 3.0",
+ScreenRectangle->{{0, 800}, {0, 572}},
+WindowSize->{432, 400},
+WindowMargins->{{Automatic, 150}, {Automatic, 40}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1731, 51, 26, 0, 30, "Input"],
+Cell[1760, 53, 152, 4, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[1949, 62, 26, 0, 30, "Input"],
+Cell[1978, 64, 1241, 34, 82, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3256, 103, 26, 0, 30, "Input"],
+Cell[3285, 105, 96, 2, 29, "Output"]
+}, Open  ]],
+Cell[3396, 110, 26, 0, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[3447, 114, 26, 0, 30, "Input"],
+Cell[3476, 116, 38, 1, 40, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3551, 122, 26, 0, 30, "Input"],
+Cell[3580, 124, 47, 1, 40, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3664, 130, 26, 0, 30, "Input"],
+Cell[3693, 132, 53, 1, 32, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3783, 138, 26, 0, 30, "Input"],
+Cell[3812, 140, 157, 4, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4006, 149, 26, 0, 30, "Input"],
+Cell[4035, 151, 160, 4, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4232, 160, 26, 0, 30, "Input"],
+Cell[4261, 162, 275, 9, 44, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4573, 176, 26, 0, 30, "Input"],
+Cell[4602, 178, 440, 10, 99, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5079, 193, 26, 0, 30, "Input"],
+Cell[5108, 195, 214, 6, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5359, 206, 26, 0, 30, "Input"],
+Cell[5388, 208, 66, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5491, 214, 79, 1, 49, "Input"],
+Cell[5573, 217, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5645, 223, 82, 1, 50, "Input"],
+Cell[5730, 226, 38, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5805, 232, 82, 1, 50, "Input"],
+Cell[5890, 235, 38, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5965, 241, 82, 1, 50, "Input"],
+Cell[6050, 244, 39, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6126, 250, 82, 1, 50, "Input"],
+Cell[6211, 253, 39, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6287, 259, 82, 1, 50, "Input"],
+Cell[6372, 262, 40, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6449, 268, 82, 1, 50, "Input"],
+Cell[6534, 271, 40, 1, 29, "Output"]
+}, Open  ]],
+Cell[6589, 275, 26, 0, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[6640, 279, 26, 0, 30, "Input"],
+Cell[6669, 281, 38, 1, 29, "Output"]
+}, Open  ]],
+Cell[6722, 285, 26, 0, 30, "Input"],
+Cell[6751, 287, 26, 0, 30, "Input"],
+Cell[6780, 289, 26, 0, 30, "Input"],
+Cell[6809, 291, 26, 0, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[6860, 295, 82, 1, 50, "Input"],
+Cell[6945, 298, 41, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7023, 304, 82, 1, 50, "Input"],
+Cell[7108, 307, 42, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7187, 313, 26, 0, 30, "Input"],
+Cell[7216, 315, 3148, 67, 201, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10401, 387, 83, 1, 50, "Input"],
+Cell[10487, 390, 43, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10567, 396, 83, 1, 50, "Input"],
+Cell[10653, 399, 43, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10733, 405, 83, 1, 50, "Input"],
+Cell[10819, 408, 44, 1, 29, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

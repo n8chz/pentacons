@@ -1,0 +1,123 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      2470,         78]*)
+(*NotebookOutlinePosition[      3118,        101]*)
+(*  CellTagsIndexPosition[      3074,         97]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(f[x_]\  := x^3 + p*x^2 + q*x + r\)], "Input"],
+
+Cell[BoxData[
+    \(u[p_, q_, r_] := \((\(-2\)*p + Sqrt[4*p^2 - 12*q])\)/6\)], "Input"],
+
+Cell[BoxData[
+    \(v[p_, q_, r_] := \((\(-2\)*p - Sqrt[4*p^2 - 12*q])\)/6\)], "Input"],
+
+Cell[BoxData[
+    \(w[p_, q_, r_] := f[u[p, q, r]]*f[v[p, q, r]]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FullSimplify[w[p, q, r]]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(1\/27\), " ", 
+      RowBox[{"(", 
+        TagBox[\(27\ r\^2 - 18\ p\ q\ r + 4\ p\^3\ r + 4\ q\^3 - p\^2\ q\^2\),
+          
+          HoldForm], ")"}]}]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \( (*\ If\ the\ expression\ in\ Out[7]\ is\ negative, \ 
+      f[x]\ has\ 3\ distinct\ real\ \(roots.\)\ *) \)], "Input"]
+},
+FrontEndVersion->"Microsoft Windows 3.0",
+ScreenRectangle->{{0, 800}, {0, 572}},
+WindowSize->{496, 464},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1709, 49, 65, 1, 30, "Input"],
+Cell[1777, 52, 87, 1, 30, "Input"],
+Cell[1867, 55, 87, 1, 30, "Input"],
+Cell[1957, 58, 77, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[2059, 63, 57, 1, 30, "Input"],
+Cell[2119, 66, 193, 5, 42, "Output"]
+}, Open  ]],
+Cell[2327, 74, 139, 2, 50, "Input"]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

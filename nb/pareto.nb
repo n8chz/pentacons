@@ -1,0 +1,674 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     18437,        582]*)
+(*NotebookOutlinePosition[     19087,        605]*)
+(*  CellTagsIndexPosition[     19043,        601]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(<< Statistics`ContinuousDistributions`\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    FormBox[
+      RowBox[{"ParetoDistribution", "[", 
+        RowBox[{
+          StyleBox["k",
+            "TI"], 
+          StyleBox[",",
+            "MR"], 
+          StyleBox["alpha",
+            "TI"]}], 
+        StyleBox["]",
+          "MR"]}], TraditionalForm]], "Input"],
+
+Cell[OutputFormData["\<\
+ParetoDistribution[k, alpha]\
+\>", "\<\
+ParetoDistribution[k, alpha]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ParetoDistribution[k, a]\)], "Input"],
+
+Cell[OutputFormData["\<\
+ParetoDistribution[k, a]\
+\>", "\<\
+ParetoDistribution[k, a]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CharacteristicFunction[ParetoDistribution[k, a], x]\)], "Input"],
+
+Cell[OutputFormData["\<\
+a*k^a*(x^2)^(a/2)*Cos[(a*Pi)/2]*Gamma[-a] + 
+  HypergeometricPFQ[{-a/2}, {1/2, 1 - a/2}, -(k^2*x^2)/4] - 
+  (I*a*k*Sqrt[x^2]*HypergeometricPFQ[{1/2 - a/2}, 
+      {3/2, 3/2 - a/2}, -(k^2*x^2)/4]*Sign[x])/(1 - a) + 
+  I*k^a*(x^2)^(a/2)*Gamma[1 - a]*Sign[x]*Sin[(a*Pi)/2]\
+\>", "\<\
+   a   2 a/2                           a Pi
+I k  (x )    Gamma[-a + 1] Sign[x] Sin[----] - 
+                                        2
+ 
+               2                     -a   1    3  -a   3
+  (I a k Sqrt[x ] HypergeometricPFQ[{-- + -}, {-, -- + -}, 
+                                     2    2    2  2    2
+ 
+         2  2
+      -(k  x )
+      --------] Sign[x]) / (-a + 1) + 
+         4
+ 
+                                          2  2
+                     -a    1  -a       -(k  x )
+  HypergeometricPFQ[{--}, {-, -- + 1}, --------] + 
+                     2     2  2           4
+ 
+     a   2 a/2     a Pi
+  a k  (x )    Cos[----] Gamma[-a]
+                    2\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CharacteristicFunction[ParetoDistribution[10000, 1/2], x]\)], "Input"],
+
+Cell[OutputFormData["\<\
+-50*Sqrt[2*Pi]*(x^2)^(1/4) + 
+  HypergeometricPFQ[{-1/4}, {1/2, 3/4}, -25000000*x^2] + 
+  50*I*Sqrt[2*Pi]*(x^2)^(1/4)*Sign[x] - 
+  10000*I*Sqrt[x^2]*HypergeometricPFQ[{1/4}, {5/4, 3/2}, 
+    -25000000*x^2]*Sign[x]\
+\>", "\<\
+               2                     1    5  3
+-10000 I Sqrt[x ] HypergeometricPFQ[{-}, {-, -}, 
+                                     4    4  2
+ 
+               2
+    -25000000 x ] Sign[x] + 
+ 
+                    2 1/4
+  50 I Sqrt[2 Pi] (x )    Sign[x] + 
+ 
+                       1     1  3              2
+  HypergeometricPFQ[{-(-)}, {-, -}, -25000000 x ] - 
+                       4     2  4
+ 
+                  2 1/4
+  50 Sqrt[2 Pi] (x )\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PDF[ParetoDistribution[k, \[Alpha]], x]\)], "Input"],
+
+Cell[OutputFormData["\<\
+k^\\[Alpha]*x^(-1 - \\[Alpha])*\\[Alpha]\
+\>", "\<\
+ \[Alpha]  -\[Alpha] - 1
+k  x       \[Alpha]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PDF[ParetoDistribution[1, 1], x]\)], "Input"],
+
+Cell[OutputFormData["\<\
+x^(-2)\
+\>", "\<\
+ -2
+x\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PDF[ParetoDistribution[1, 2], x]\)], "Input"],
+
+Cell[OutputFormData["\<\
+2/x^3\
+\>", "\<\
+2
+--
+ 3
+x\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PDF[ParetoDistribution[1, 1/2], x]\)], "Input"],
+
+Cell[OutputFormData["\<\
+1/(2*x^(3/2))\
+\>", "\<\
+  1
+------
+   3/2
+2 x\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CDF[ParetoDistribution[k, \[Alpha]], x]\)], "Input"],
+
+Cell[OutputFormData["\<\
+1 - (k/x)^\\[Alpha]\
+\>", "\<\
+  k \[Alpha]
+-(-)  + 1
+  x\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Plot[CDF[ParetoDistribution[1, 0.5]], {x, 1, 10}]\)], "Input"],
+
+Cell["\<\
+Plot::plnr: CDF[ParetoDistribution[1, 0.5]]
+     is not a machine-size real number at x = 1..\
+\>", "Message"],
+
+Cell["\<\
+Plot::plnr: CDF[ParetoDistribution[1, 0.5]]
+     is not a machine-size real number at x = 1.3651.\
+\>", "Message"],
+
+Cell["\<\
+Plot::plnr: CDF[ParetoDistribution[1, 0.5]]
+     is not a machine-size real number at x = 1.76328.\
+\>", "Message"],
+
+Cell["\<\
+General::stop: 
+   Further output of Plot::plnr
+     will be suppressed during this calculation.\
+\>", "Message"],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .61803 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.0238095 0.952381 0.0147151 0.588604 [
+[.21429 .00222 -9 -9 ]
+[.21429 .00222 9 0 ]
+[.40476 .00222 -9 -9 ]
+[.40476 .00222 9 0 ]
+[.59524 .00222 -9 -9 ]
+[.59524 .00222 9 0 ]
+[.78571 .00222 -9 -9 ]
+[.78571 .00222 9 0 ]
+[.97619 .00222 -3 -9 ]
+[.97619 .00222 3 0 ]
+[.01131 .13244 -18 -4.5 ]
+[.01131 .13244 0 4.5 ]
+[.01131 .25016 -18 -4.5 ]
+[.01131 .25016 0 4.5 ]
+[.01131 .36788 -18 -4.5 ]
+[.01131 .36788 0 4.5 ]
+[.01131 .4856 -18 -4.5 ]
+[.01131 .4856 0 4.5 ]
+[.01131 .60332 -6 -4.5 ]
+[.01131 .60332 0 4.5 ]
+[ 0 0 0 0 ]
+[ 1 .61803 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 g
+.25 Mabswid
+.21429 .01472 m
+.21429 .02097 L
+s
+[(0.2)] .21429 .00222 0 1 Mshowa
+.40476 .01472 m
+.40476 .02097 L
+s
+[(0.4)] .40476 .00222 0 1 Mshowa
+.59524 .01472 m
+.59524 .02097 L
+s
+[(0.6)] .59524 .00222 0 1 Mshowa
+.78571 .01472 m
+.78571 .02097 L
+s
+[(0.8)] .78571 .00222 0 1 Mshowa
+.97619 .01472 m
+.97619 .02097 L
+s
+[(1)] .97619 .00222 0 1 Mshowa
+.125 Mabswid
+.07143 .01472 m
+.07143 .01847 L
+s
+.11905 .01472 m
+.11905 .01847 L
+s
+.16667 .01472 m
+.16667 .01847 L
+s
+.2619 .01472 m
+.2619 .01847 L
+s
+.30952 .01472 m
+.30952 .01847 L
+s
+.35714 .01472 m
+.35714 .01847 L
+s
+.45238 .01472 m
+.45238 .01847 L
+s
+.5 .01472 m
+.5 .01847 L
+s
+.54762 .01472 m
+.54762 .01847 L
+s
+.64286 .01472 m
+.64286 .01847 L
+s
+.69048 .01472 m
+.69048 .01847 L
+s
+.7381 .01472 m
+.7381 .01847 L
+s
+.83333 .01472 m
+.83333 .01847 L
+s
+.88095 .01472 m
+.88095 .01847 L
+s
+.92857 .01472 m
+.92857 .01847 L
+s
+.25 Mabswid
+0 .01472 m
+1 .01472 L
+s
+.02381 .13244 m
+.03006 .13244 L
+s
+[(0.2)] .01131 .13244 1 0 Mshowa
+.02381 .25016 m
+.03006 .25016 L
+s
+[(0.4)] .01131 .25016 1 0 Mshowa
+.02381 .36788 m
+.03006 .36788 L
+s
+[(0.6)] .01131 .36788 1 0 Mshowa
+.02381 .4856 m
+.03006 .4856 L
+s
+[(0.8)] .01131 .4856 1 0 Mshowa
+.02381 .60332 m
+.03006 .60332 L
+s
+[(1)] .01131 .60332 1 0 Mshowa
+.125 Mabswid
+.02381 .04415 m
+.02756 .04415 L
+s
+.02381 .07358 m
+.02756 .07358 L
+s
+.02381 .10301 m
+.02756 .10301 L
+s
+.02381 .16187 m
+.02756 .16187 L
+s
+.02381 .1913 m
+.02756 .1913 L
+s
+.02381 .22073 m
+.02756 .22073 L
+s
+.02381 .27959 m
+.02756 .27959 L
+s
+.02381 .30902 m
+.02756 .30902 L
+s
+.02381 .33845 m
+.02756 .33845 L
+s
+.02381 .39731 m
+.02756 .39731 L
+s
+.02381 .42674 m
+.02756 .42674 L
+s
+.02381 .45617 m
+.02756 .45617 L
+s
+.02381 .51503 m
+.02756 .51503 L
+s
+.02381 .54446 m
+.02756 .54446 L
+s
+.02381 .57389 m
+.02756 .57389 L
+s
+.25 Mabswid
+.02381 0 m
+.02381 .61803 L
+s
+0 0 m
+1 0 L
+1 .61803 L
+0 .61803 L
+closepath
+clip
+newpath
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 177.938},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000/AP00`40o`000?l0003oooooob7oool0
+04?oool00`000?ooooooo`02oooo00@0003oooooooooool30000:?ooo`030000oooooooo00;oool0
+0`000?ooooooo`02oooo0`0002Ooool00`000?ooooooo`02oooo00@0003oooooooooool20000:Ooo
+o`030000oooooooo00;oool00`000?ooooooo`02oooo00<0003oooooool0:Oooo`D00006oooo0012
+oooo00<0003oool000001oooo`030000oooooooo02Ooool00`000?ooo`000009oooo00<0003ooooo
+ool09Oooo`030000oooo000000Ooool00`000?ooo`00000Woooo00<0003oool000001oooo`030000
+oooo000002coool00`000?ooooooo`06oooo0012oooo00<0003oool000002?ooo`030000oooooooo
+02Koool00`000?ooo`000007oooo100002Koool00`000?ooo`000007oooo00<0003oool000009ooo
+o`030000oooo000000Ooool00`000?ooo`00000/oooo00<0003oooooool01_ooo`00@_ooo`030000
+oooo000000Soool00`000?ooooooo`0Voooo00<0003oool000001oooo`030000oooo000002Ooool0
+0`000?ooo`000007oooo0P0002Soool00`000?ooo`000008oooo00<0003oooooool0:oooo`030000
+oooooooo00Koool004;oool00`000?ooo`000007oooo00<0003oool000009oooo`030000oooo0000
+00Soool200009oooo`030000oooo000000Ooool00`000?ooooooo`0Woooo00<0003oool000001ooo
+o`030000oooo000002coool00`000?ooooooo`06oooo0013oooo00<0003oooooool01oooo`030000
+oooooooo02Ooool00`000?ooooooo`08oooo00<0003oooooool09_ooo`030000oooooooo00Ooool2
+0000:?ooo`030000oooooooo00Ooool00`000?ooooooo`0Zoooo0P0000Soool00?oooolQoooo000E
+oooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000
+oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool000oooooo00004@00007oool0
+01Goool00`000?ooooooo`0:oooo00<0003oooooool02_ooo`030000oooooooo00[oool00`000?oo
+ooooo`0:oooo00<0003oooooool02_ooo`030000oooooooo00[oool00`000?ooooooo`0:oooo00<0
+003oooooool02_ooo`030000oooooooo00[oool00`000?ooooooo`09oooo00<0003oooooool02_oo
+o`030000oooooooo00[oool00`000?ooooooo`0:oooo00<0003oooooool02_ooo`030000oooooooo
+00[oool00`000?ooooooo`0:oooo00<0003oooooool02_ooo`030000oooooooo00[oool00`000?oo
+ooooo`0:oooo00<0003oooooool02_ooo`030000oooooooo00Goool001Goool00`000?ooooooo`0a
+oooo00<0003oooooool0<Oooo`030000oooooooo033oool00`000?ooooooo`0aoooo00<0003ooooo
+ool0<Oooo`030000oooooooo00Goool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000
+oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3o
+oooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo0P000?ooool:oooo000Eoooo00<0
+003oooooool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo
+0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Ooo
+o`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool2
+0000ooooo`[oool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9
+oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Ooo
+o`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?oo
+ooooo`3ooooo2Oooo`005Oooo`80003ooooo2_ooo`005Oooo`030000oooooooo0?ooool9oooo000E
+oooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000
+oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool000Goool00`000?ooooooo`02
+oooo00@0003oooooooooool300001?ooo`030000oooooooo0?ooool9oooo0004oooo00<0003oool0
+00001oooo`030000oooooooo00Coool00`000?ooooooo`3ooooo2Oooo`001?ooo`030000oooo0000
+00Soool00`000?ooooooo`03oooo0`000?ooool9oooo0004oooo00<0003oool000002?ooo`030000
+oooooooo00?oool00`000?ooooooo`3ooooo2Oooo`001?ooo`030000oooo000000Ooool00`000?oo
+o`000004oooo00<0003oooooool0ooooo`Woool000Goool00`000?ooooooo`07oooo00<0003ooooo
+ool00oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool0
+0`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003ooooo
+ool0ooooo`Woool001Goool20000ooooo`[oool001Goool00`000?ooooooo`3ooooo2Oooo`005Ooo
+o`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?oo
+ooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0oooo
+o`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`80003ooooo2_ooo`005Oooo`030000
+oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3o
+oooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool0
+01Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo0P00
+0?ooool:oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Ooo
+o`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool0
+0`000?ooooooo`3ooooo2Oooo`001Oooo`030000oooooooo00;oool00`000?ooooooo`02oooo0`00
+00?oool00`000?ooooooo`3ooooo2Oooo`001?ooo`030000oooo000000Woool00`000?ooooooo`02
+oooo00<0003oooooool0ooooo`Woool000Coool00`000?ooo`000007oooo100000?oool30000oooo
+o`Woool000Coool00`000?ooo`000007oooo00<0003oool000001?ooo`030000oooooooo0?ooool9
+oooo0004oooo00<0003oool000002?ooo`800004oooo00<0003oooooool0ooooo`Woool000Goool0
+0`000?ooooooo`08oooo00<0003oooooool00_ooo`030000oooooooo0?ooool9oooo000Eoooo00<0
+003oooooool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo
+0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool20000ooooo`[oool001Goool0
+0`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003ooooo
+ool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9
+oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Ooo
+o`80003ooooo2_ooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0oooo
+o`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000E
+oooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000
+oooooooo0?ooool9oooo000Eoooo0P000?ooool:oooo000Eoooo00<0003oooooool0ooooo`Woool0
+01Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0
+003oooooool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Oooo`001Oooo`030000oooooooo
+00;oool010000?ooooooooooo`800005oooo00<0003oooooool0ooooo`Woool000Coool00`000?oo
+o`000007oooo00<0003oool000001?ooo`030000oooooooo0?ooool9oooo0004oooo00<0003oool0
+00001oooo`030000oooo000000Coool30000ooooo`Woool000Coool00`000?ooo`000007oooo0P00
+00Goool00`000?ooooooo`3ooooo2Oooo`001?ooo`030000oooo000000Ooool00`000?ooooooo`04
+oooo00<0003oooooool0ooooo`Woool000Goool00`000?ooooooo`07oooo0P0000Coool00`000?oo
+ooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0oooo
+o`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000E
+oooo0P000?ooool:oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3o
+oooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool0
+01Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0
+003oooooool0ooooo`Woool001Goool20000ooooo`[oool001Goool00`000?ooooooo`3ooooo2Ooo
+o`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool0
+0`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003ooooo
+ool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`80003ooooo2_ooo`005Ooo
+o`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?oo
+ooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0oooo
+o`Woool000Goool00`000?ooooooo`02oooo00<0003oooooool00_ooo`030000oooooooo00?oool0
+0`000?ooooooo`3ooooo2Oooo`001?ooo`030000oooo000000Ooool00`000?ooo`000004oooo00<0
+003oooooool0ooooo`Woool000Coool00`000?ooo`000007oooo00<0003oool000001?ooo`<0003o
+oooo2Oooo`001?ooo`030000oooo000000Soool00`000?ooooooo`03oooo00<0003oooooool0oooo
+o`Woool000Coool00`000?ooo`000007oooo00<0003oool000001?ooo`030000oooooooo0?ooool9
+oooo0005oooo00<0003oooooool01oooo`030000oooooooo00?oool00`000?ooooooo`3ooooo2Ooo
+o`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool0
+0`000?ooooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo0P000?ooool:
+oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Oooo`005Ooo
+o`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?oo
+ooooo`3ooooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0oooo
+o`Woool001Goool20000ooooo`[oool001Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`030000
+oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3o
+oooo2Oooo`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool0
+01Goool00`000?ooooooo`3ooooo2Oooo`005Oooo`80003ooooo2_ooo`005Oooo`030000oooooooo
+0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3ooooo2Ooo
+o`005Oooo`030000oooooooo0?ooool9oooo000Eoooo00<0003oooooool0ooooo`Woool000goool5
+00000oooo`030000oooooooo0?ooool9oooo000?oooo00<0003oooooool00oooo`030000oooooooo
+0?ooool9oooo000?oooo00<0003oooooool00oooo`<0003ooooo2Oooo`003oooo`030000oooooooo
+00?oool00`000?ooooooo`3ooooo2Oooo`003oooo`030000oooooooo00?oool00`000?ooooooo`3o
+oooo2Oooo`003_ooo`800005oooo00<0003oooooool0ooooo`Woool001Goool00`000?ooooooo`3o
+oooo2Oooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {176.938, 0}} -> {-0.0829852, -0.07747, 
+  0.00386179, 0.00624851}}],
+
+Cell[OutputFormData["\<\
+Graphics[{{}}, {PlotRange -> Automatic, 
+   AspectRatio -> GoldenRatio^(-1), 
+   DisplayFunction :> $DisplayFunction, 
+   ColorOutput -> Automatic, Axes -> Automatic, 
+   AxesOrigin -> Automatic, PlotLabel -> None, 
+   AxesLabel -> None, Ticks -> Automatic, 
+   GridLines -> None, Prolog -> {}, Epilog -> {}, 
+   AxesStyle -> Automatic, Background -> Automatic, 
+   DefaultColor -> Automatic, DefaultFont :> $DefaultFont, 
+   RotateLabel -> True, Frame -> False, 
+   FrameStyle -> Automatic, FrameTicks -> Automatic, 
+   FrameLabel -> None, PlotRegion -> Automatic, 
+   ImageSize -> Automatic, TextStyle :> $TextStyle, 
+   FormatType :> $FormatType}]\
+\>", "\<\
+-Graphics-\
+\>"], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"Microsoft Windows 3.0",
+ScreenRectangle->{{0, 800}, {0, 572}},
+WindowSize->{496, 464},
+WindowMargins->{{20, Automatic}, {16, Automatic}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1709, 49, 71, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[1805, 54, 292, 11, 29, "Input"],
+Cell[2100, 67, 110, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2247, 76, 57, 1, 30, "Input"],
+Cell[2307, 79, 102, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2446, 88, 84, 1, 30, "Input"],
+Cell[2533, 91, 989, 28, 228, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3559, 124, 90, 1, 30, "Input"],
+Cell[3652, 127, 708, 23, 178, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4397, 155, 72, 1, 30, "Input"],
+Cell[4472, 158, 138, 5, 38, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4647, 168, 65, 1, 30, "Input"],
+Cell[4715, 171, 65, 5, 38, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4817, 181, 65, 1, 30, "Input"],
+Cell[4885, 184, 68, 7, 58, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4990, 196, 67, 1, 30, "Input"],
+Cell[5060, 199, 88, 7, 58, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5185, 211, 72, 1, 30, "Input"],
+Cell[5260, 214, 99, 6, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5396, 225, 82, 1, 30, "Input"],
+Cell[5481, 228, 120, 3, 42, "Message"],
+Cell[5604, 233, 124, 3, 42, "Message"],
+Cell[5731, 238, 125, 3, 42, "Message"],
+Cell[5859, 243, 123, 4, 59, "Message"],
+Cell[5985, 249, 11719, 311, 186, 2793, 196, "GraphicsData", 
+"PostScript", "Graphics"],
+Cell[17707, 562, 714, 17, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

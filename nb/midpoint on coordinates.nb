@@ -1,0 +1,408 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      6035,        290]*)
+(*NotebookOutlinePosition[      6683,        313]*)
+(*  CellTagsIndexPosition[      6639,        309]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(Pi\)], "Input"],
+
+Cell[OutputFormData["\<\
+Pi\
+\>", "\<\
+Pi\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sin[Pi]\)], "Input"],
+
+Cell[OutputFormData["\<\
+0\
+\>", "\<\
+0\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(phi[lat_] = Pi*lat/180 + Pi/2\)], "Input"],
+
+Cell[OutputFormData["\<\
+Pi/2 + (lat*Pi)/180\
+\>", "\<\
+lat Pi   Pi
+------ + --
+ 180     2\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(phi[45]\)], "Input"],
+
+Cell[OutputFormData["\<\
+(3*Pi)/4\
+\>", "\<\
+3 Pi
+----
+ 4\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(theta[long_] = Pi*long/180\)], "Input"],
+
+Cell[OutputFormData["\<\
+(long*Pi)/180\
+\>", "\<\
+long Pi
+-------
+  180\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(xx[theta_, phi_] = Cos[theta]*Sin[phi]\)], "Input"],
+
+Cell[OutputFormData["\<\
+Cos[theta]*Sin[phi]\
+\>", "\<\
+Cos[theta] Sin[phi]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(yy[theta_, phi_] = Sin[theta]*Sin[phi]\)], "Input"],
+
+Cell[OutputFormData["\<\
+Sin[phi]*Sin[theta]\
+\>", "\<\
+Sin[phi] Sin[theta]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(zz[phi_] = \(-Cos[phi]\)\)], "Input"],
+
+Cell[OutputFormData["\<\
+-Cos[phi]\
+\>", "\<\
+-Cos[phi]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(xyz[long_, lat_] = {xx[theta[long], phi[lat]], 
+        yy[theta[long], phi[lat]], zz[phi[lat]]}\)], "Input"],
+
+Cell[OutputFormData["\<\
+{Cos[(lat*Pi)/180]*Cos[(long*Pi)/180], 
+  Cos[(lat*Pi)/180]*Sin[(long*Pi)/180], Sin[(lat*Pi)/180]}\
+\>", "\<\
+     lat Pi      long Pi       lat Pi      long Pi
+{Cos[------] Cos[-------], Cos[------] Sin[-------], 
+      180          180          180          180
+ 
+      lat Pi
+  Sin[------]}
+       180\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Mean[{{1, 2}, {3, 4}}]\)], "Input"],
+
+Cell[OutputFormData["\<\
+Mean[{{1, 2}, {3, 4}}]\
+\>", "\<\
+Mean[{{1, 2}, {3, 4}}]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(am[a_, b_] = \((a + b)\)/2\)], "Input"],
+
+Cell[OutputFormData["\<\
+(a + b)/2\
+\>", "\<\
+b + a
+-----
+  2\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(midpoint[u_, v_] = MapThread[am, {u, v}]\)], "Input"],
+
+Cell["\<\
+MapThread::mptd: 
+   Object u at position {2, 1} in MapThread[am, {u, v}]
+     has only 0 of required 1 dimensions.\
+\>", "Message"],
+
+Cell[OutputFormData["\<\
+MapThread[am, {u, v}]\
+\>", "\<\
+MapThread[am, {u, v}]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(midpoint[xyz[long1, lat1], xyz[long2, lat2]]\)], "Input"],
+
+Cell[OutputFormData["\<\
+{(Cos[(lat1*Pi)/180]*Cos[(long1*Pi)/180] + 
+     Cos[(lat2*Pi)/180]*Cos[(long2*Pi)/180])/2, 
+  (Cos[(lat1*Pi)/180]*Sin[(long1*Pi)/180] + 
+     Cos[(lat2*Pi)/180]*Sin[(long2*Pi)/180])/2, 
+  (Sin[(lat1*Pi)/180] + Sin[(lat2*Pi)/180])/2}\
+\>", "\<\
+     lat2 Pi      long2 Pi        lat1 Pi      long1 Pi
+ Cos[-------] Cos[--------] + Cos[-------] Cos[--------]
+       180          180             180          180
+{-------------------------------------------------------, 
+                            2
+ 
+      lat2 Pi      long2 Pi        lat1 Pi      long1 Pi
+  Cos[-------] Sin[--------] + Cos[-------] Sin[--------]
+        180          180             180          180
+  -------------------------------------------------------, 
+                             2
+ 
+      lat2 Pi        lat1 Pi
+  Sin[-------] + Sin[-------]
+        180            180
+  ---------------------------}
+               2\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(theta[x_, y_] = ArcTan[y/x]\)], "Input"],
+
+Cell[OutputFormData["\<\
+ArcTan[y/x]\
+\>", "\<\
+       y
+ArcTan[-]
+       x\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(phi[z_] = \(-ArcCos[z]\)\)], "Input"],
+
+Cell[OutputFormData["\<\
+-ArcCos[z]\
+\>", "\<\
+-ArcCos[z]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(<< Calculus`VectorAnalysis`\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Spherical[1, 2, 3]\)], "Input"],
+
+Cell[OutputFormData["\<\
+Spherical[1, 2, 3]\
+\>", "\<\
+Spherical[1, 2, 3]\
+\>"], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"Microsoft Windows 3.0",
+ScreenRectangle->{{0, 800}, {0, 572}},
+WindowSize->{496, 464},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1731, 51, 35, 1, 30, "Input"],
+Cell[1769, 54, 58, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[1864, 63, 40, 1, 30, "Input"],
+Cell[1907, 66, 56, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2000, 75, 62, 1, 30, "Input"],
+Cell[2065, 78, 107, 6, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2209, 89, 40, 1, 30, "Input"],
+Cell[2252, 92, 74, 6, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2363, 103, 59, 1, 30, "Input"],
+Cell[2425, 106, 88, 6, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2550, 117, 71, 1, 30, "Input"],
+Cell[2624, 120, 92, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2753, 129, 71, 1, 30, "Input"],
+Cell[2827, 132, 92, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2956, 141, 57, 1, 30, "Input"],
+Cell[3016, 144, 72, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3125, 153, 129, 2, 50, "Input"],
+Cell[3257, 157, 346, 11, 88, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3640, 173, 55, 1, 30, "Input"],
+Cell[3698, 176, 98, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3833, 185, 59, 1, 30, "Input"],
+Cell[3895, 188, 78, 6, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4010, 199, 73, 1, 30, "Input"],
+Cell[4086, 202, 142, 4, 59, "Message"],
+Cell[4231, 208, 96, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4364, 217, 77, 1, 30, "Input"],
+Cell[4444, 220, 939, 24, 188, "Output"]
+}, Open  ]],
+Cell[5398, 247, 26, 0, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[5449, 251, 60, 1, 30, "Input"],
+Cell[5512, 254, 92, 6, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5641, 265, 57, 1, 30, "Input"],
+Cell[5701, 268, 74, 4, 28, "Output"]
+}, Open  ]],
+Cell[5790, 275, 60, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[5875, 280, 51, 1, 30, "Input"],
+Cell[5929, 283, 90, 4, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+
