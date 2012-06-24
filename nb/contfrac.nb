@@ -1,0 +1,400 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      6015,        282]*)
+(*NotebookOutlinePosition[      6663,        305]*)
+(*  CellTagsIndexPosition[      6619,        301]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(ContinuedFraction[
+      \(\(\(FullForm[FindRoot[x == Cos[x], {x, 0.7}]]\)[\([1]\)]\)[\([1]\)]\)[
+        \([2]\)], 80]\)], "Input"],
+
+Cell[OutputFormData["\<\
+ContinuedFractionForm[{0, 1, 2, 1, 4, 1, 40, 1, 12, 1, 3, 
+   3, 4, 1, 1, 38}]\
+\>", "\<\
+ContinuedFractionForm[{0, 1, 2, 1, 4, 1, 40, 1, 12, 1, 3, 
+ 
+   3, 4, 1, 1, 38}]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(a = 
+      N[\(\(\(FullForm[FindRoot[x == Cos[x], {x, 0.7}]]\)[\([1]\)]\)[\([1]\)]
+            \)[\([2]\)], 1000]\)], "Input"],
+
+Cell[OutputFormData["\<\
+0.7390851604651073\
+\>", "\<\
+0.7390851604651073\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    \(<< NumberTheory`ContinuedFractions`\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ContinuedFraction[a, 100]\)], "Input"],
+
+Cell[OutputFormData["\<\
+ContinuedFractionForm[{0, 1, 2, 1, 4, 1, 40, 1, 12, 1, 3, 
+   3, 4, 1, 1, 38}]\
+\>", "\<\
+ContinuedFractionForm[{0, 1, 2, 1, 4, 1, 40, 1, 12, 1, 3, 
+ 
+   3, 4, 1, 1, 38}]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ContinuedFraction[EulerGamma, 100]\)], "Input"],
+
+Cell[OutputFormData["\<\
+ContinuedFractionForm[{0, 1, 1, 2, 1, 2, 1, 4, 3, 13, 5, 
+   1, 1, 8, 1, 2, 4, 1, 1, 40, 1, 11, 3, 7, 1, 7, 1, 1, 
+   5, 1, 49, 4, 1, 65, 1, 4, 7, 11, 1, 399, 2, 1, 3, 2, 
+   1, 2, 1, 5, 3, 2, 1, 10, 1, 1, 1, 1, 2, 1, 1, 3, 1, 4, 
+   1, 1, 2, 5, 1, 3, 6, 2, 1, 2, 1, 1, 1, 2, 1, 3, 16, 8, 
+   1, 1, 2, 16, 6, 1, 2, 2, 1, 7, 2, 1, 1, 1, 3, 1, 2, 1, 
+   2, 13}]\
+\>", "\<\
+ContinuedFractionForm[{0, 1, 1, 2, 1, 2, 1, 4, 3, 13, 5, 
+ 
+   1, 1, 8, 1, 2, 4, 1, 1, 40, 1, 11, 3, 7, 1, 7, 1, 1, 
+ 
+   5, 1, 49, 4, 1, 65, 1, 4, 7, 11, 1, 399, 2, 1, 3, 2, 
+ 
+   1, 2, 1, 5, 3, 2, 1, 10, 1, 1, 1, 1, 2, 1, 1, 3, 1, 4, 
+ 
+   1, 1, 2, 5, 1, 3, 6, 2, 1, 2, 1, 1, 1, 2, 1, 3, 16, 8, 
+ 
+   1, 1, 2, 16, 6, 1, 2, 2, 1, 7, 2, 1, 1, 1, 3, 1, 2, 1, 
+ 
+   2, 13}]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Random\)], "Input"],
+
+Cell[OutputFormData["\<\
+Random\
+\>", "\<\
+Random\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Random[]\)], "Input"],
+
+Cell[OutputFormData["\<\
+0.2812624716175069\
+\>", "\<\
+0.281262\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Random[]\)], "Input"],
+
+Cell[OutputFormData["\<\
+0.200957218804865\
+\>", "\<\
+0.200957\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Random[Integer, {1, 10}]\)], "Input"],
+
+Cell[OutputFormData["\<\
+6\
+\>", "\<\
+6\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(List[Random[Integer, {1, 10}], 10]\)], "Input"],
+
+Cell[OutputFormData["\<\
+{9, 10}\
+\>", "\<\
+{9, 10}\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[Random[Integer, {1, 10}], {10}]\)], "Input"],
+
+Cell[OutputFormData["\<\
+{7, 3, 8, 10, 5, 6, 6, 2, 2, 7}\
+\>", "\<\
+{7, 3, 8, 10, 5, 6, 6, 2, 2, 7}\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[n_] = Table[Random[Integer, {0, 9}], {n}]\)], "Input"],
+
+Cell["\<\
+Table::iterb: 
+   Iterator {n} does not have appropriate bounds.\
+\>", "Message"],
+
+Cell[OutputFormData["\<\
+Table[Random[Integer, {0, 9}], {n}]\
+\>", "\<\
+Table[Random[Integer, {0, 9}], {n}]\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[4]\)], "Input"],
+
+Cell[OutputFormData["\<\
+{3, 6, 5, 2}\
+\>", "\<\
+{3, 6, 5, 2}\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[9]\)], "Input"],
+
+Cell[OutputFormData["\<\
+{7, 3, 7, 0, 1, 2, 0, 9, 4}\
+\>", "\<\
+{7, 3, 7, 0, 1, 2, 0, 9, 4}\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[22]\)], "Input"],
+
+Cell[OutputFormData["\<\
+{9, 8, 0, 4, 7, 9, 3, 4, 6, 2, 0, 4, 5, 0, 8, 0, 7, 2, 7, 
+  1, 4, 4}\
+\>", "\<\
+{9, 8, 0, 4, 7, 9, 3, 4, 6, 2, 0, 4, 5, 0, 8, 0, 7, 2, 7, 
+ 
+  1, 4, 4}\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[7]\)], "Input"],
+
+Cell[OutputFormData["\<\
+{6, 8, 9, 6, 5, 4, 7}\
+\>", "\<\
+{6, 8, 9, 6, 5, 4, 7}\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[9]\)], "Input"],
+
+Cell[OutputFormData["\<\
+{9, 5, 0, 5, 5, 0, 5, 3, 8}\
+\>", "\<\
+{9, 5, 0, 5, 5, 0, 5, 3, 8}\
+\>"], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"Microsoft Windows 3.0",
+ScreenRectangle->{{0, 800}, {0, 572}},
+WindowSize->{480, 448},
+WindowMargins->{{0, Automatic}, {Automatic, 5}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1731, 51, 152, 3, 70, "Input"],
+Cell[1886, 56, 212, 7, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2135, 68, 146, 3, 70, "Input"],
+Cell[2284, 73, 90, 4, 28, "Output"]
+}, Open  ]],
+Cell[2389, 80, 26, 0, 30, "Input"],
+Cell[2418, 82, 68, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[2511, 87, 58, 1, 30, "Input"],
+Cell[2572, 90, 212, 7, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2821, 102, 67, 1, 30, "Input"],
+Cell[2891, 105, 784, 22, 148, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3712, 132, 39, 1, 30, "Input"],
+Cell[3754, 135, 66, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3857, 144, 41, 1, 30, "Input"],
+Cell[3901, 147, 80, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4018, 156, 41, 1, 30, "Input"],
+Cell[4062, 159, 79, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4178, 168, 57, 1, 30, "Input"],
+Cell[4238, 171, 56, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4331, 180, 67, 1, 30, "Input"],
+Cell[4401, 183, 68, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4506, 192, 70, 1, 30, "Input"],
+Cell[4579, 195, 116, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4732, 204, 76, 1, 30, "Input"],
+Cell[4811, 207, 91, 3, 42, "Message"],
+Cell[4905, 212, 124, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5066, 221, 37, 1, 30, "Input"],
+Cell[5106, 224, 78, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5221, 233, 37, 1, 30, "Input"],
+Cell[5261, 236, 108, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5406, 245, 38, 1, 30, "Input"],
+Cell[5447, 248, 194, 7, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5678, 260, 37, 1, 30, "Input"],
+Cell[5718, 263, 96, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5851, 272, 37, 1, 30, "Input"],
+Cell[5891, 275, 108, 4, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

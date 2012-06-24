@@ -1,0 +1,248 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      5262,        178]*)
+(*NotebookOutlinePosition[      5912,        201]*)
+(*  CellTagsIndexPosition[      5868,        197]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(<< DiscreteMath`Combinatorica`\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Dist[q_] := Abs[Apply[Complex, q[\([1]\)] - q[\([2]\)]]]\)], "Input"],
+
+Cell["\<\
+General::spell: 
+   Possible spelling error: new symbol
+     name \"Dist\" is similar to existing
+     symbols {Disk, List}.\
+\>", "Message"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(<< Statistics`MultiDescriptiveStatistics`\)], "Input"],
+
+Cell[BoxData[
+    \(CorrelateGraph[g_] := 
+      Correlation[Flatten[g[\([1]\)]], 
+        Map[Dist, CartesianProduct[g[\([2]\)], g[\([2]\)]]]]\)], "Input"],
+
+Cell[BoxData[
+    \(VectorLength[v_] := Sqrt[v.v]\)], "Input"],
+
+Cell[BoxData[
+    \(PolarIntermediate[u_, v_] := 
+      UnitVector[\((UnitVector[u] + UnitVector[v])\)]*
+        \((VectorLength[u] + VectorLength[v])\)/2\)], "Input"],
+
+Cell[BoxData[
+    \(UnitVector[v_] := v/VectorLength[v]\)], "Input"],
+
+Cell[BoxData[
+    \(FlipVector[v_] := {\(-v[\([1]\)]\), v[\([2]\)]}\)], "Input"],
+
+Cell[BoxData[
+    \(FlipEmbed[g_] := 
+      \(g[\([0]\)]\)[g[\([1]\)], Map[FlipVector, g[\([2]\)]]]\)], "Input"],
+
+Cell[BoxData[
+    \(RandomVertex[] := 
+      Module[{p}, 
+        p = {Random[Real, \ {\(-1\), 1}], Random[Real, \ {\(-1\), 1}]}; 
+        If[VectorLength[p] < 1, p, RandomVertex[]]]\)], "Input"],
+
+Cell[BoxData[
+    \(RandomEmbed[g_] := 
+      \(g[\([0]\)]\)[g[\([1]\)], Table[RandomVertex[], {Length[g[\([2]\)]]}]]
+        \)], "Input"],
+
+Cell[BoxData[
+    \(ImproveGraph[g_] := 
+      Module[{c, h}, h = RandomEmbed[g]; c = CorrelateGraph[h]; 
+        If[c < CorrelateGraph[g], h, ImproveGraph[g]]]\)], "Input"],
+
+Cell[BoxData[
+    \(IntermediatePair[p_] := PolarIntermediate[p[\([1]\)], p[\([2]\)]]\)], 
+  "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(IntermediatePair[{{1, 2}, {3, 4}}]\)], "Input"],
+
+Cell[OutputFormData["\<\
+{((3/5 + 1/Sqrt[5])*(5 + Sqrt[5]))/(2*Sqrt[(3/5 + 1/Sqrt[5])^2 + (4/5 + \
+2/Sqrt[5])^2]), 
+  ((4/5 + 2/Sqrt[5])*(5 + Sqrt[5]))/(2*Sqrt[(3/5 + 1/Sqrt[5])^2 + (4/5 + \
+2/Sqrt[5])^2])}\
+\>", "\<\
+           1      3                                 2      4
+       (------- + -) (Sqrt[5] + 5)              (------- + -) (Sqrt[5] + 5)
+        Sqrt[5]   5                              Sqrt[5]   5
+{---------------------------------------, \
+---------------------------------------}
+            2      4 2       1      3 2              2      4 2       1      \
+3 2
+ 2 Sqrt[(------- + -)  + (------- + -) ]  2 Sqrt[(------- + -)  + (------- + \
+-) ]
+         Sqrt[5]   5      Sqrt[5]   5             Sqrt[5]   5      Sqrt[5]   \
+5\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(IntermediateEmbed[g1_, g2_] := 
+      \(g1[\([0]\)]\)[g1[\([1]\)], 
+        Map[IntermediatePair, Transpose[{g1[\([2]\)], g2[\([2]\)]}]]]\)], 
+  "Input"],
+
+Cell[BoxData[
+    \(TestOnce[size_, density_] := 
+      Module[{g, h, j, k, m, c}, g = RandomGraph[size, density]; 
+        h = ImproveGraph[g]; \ j = ImproveGraph[h]; c = CorrelateGraph[j]; 
+        k = IntermediateEmbed[h, j]; \ 
+        m = IntermediateEmbed[FlipEmbed[h], j]; 
+        CorrelateGraph[k] < c\  || \ CorrelateGraph[m] < c]\)], "Input"],
+
+Cell[BoxData[
+    \(TestMethod[size_, density_, niter_] := 
+      Table[TestOnce[size, density], {i, niter}]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TestMethod[20, .5, 20]\)], "Input"],
+
+Cell[OutputFormData["\<\
+$Aborted\
+\>", "\<\
+$Aborted\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TestOnce[10, .5]\)], "Input"],
+
+Cell[OutputFormData["\<\
+False\
+\>", "\<\
+False\
+\>"], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"Microsoft Windows 3.0",
+ScreenRectangle->{{0, 800}, {0, 544}},
+WindowSize->{784, 537},
+WindowMargins->{{-4, Automatic}, {-4, Automatic}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1709, 49, 63, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[1797, 54, 89, 1, 30, "Input"],
+Cell[1889, 57, 151, 5, 76, "Message"]
+}, Open  ]],
+Cell[2055, 65, 74, 1, 30, "Input"],
+Cell[2132, 68, 156, 3, 30, "Input"],
+Cell[2291, 73, 62, 1, 30, "Input"],
+Cell[2356, 76, 167, 3, 50, "Input"],
+Cell[2526, 81, 68, 1, 30, "Input"],
+Cell[2597, 84, 80, 1, 30, "Input"],
+Cell[2680, 87, 112, 2, 30, "Input"],
+Cell[2795, 91, 195, 4, 50, "Input"],
+Cell[2993, 97, 139, 3, 30, "Input"],
+Cell[3135, 102, 173, 3, 50, "Input"],
+Cell[3311, 107, 101, 2, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[3437, 113, 67, 1, 30, "Input"],
+Cell[3507, 116, 765, 17, 88, "Output"]
+}, Open  ]],
+Cell[4287, 136, 173, 4, 30, "Input"],
+Cell[4463, 142, 353, 6, 70, "Input"],
+Cell[4819, 150, 121, 2, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[4965, 156, 55, 1, 30, "Input"],
+Cell[5023, 159, 70, 4, 28, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5130, 168, 49, 1, 30, "Input"],
+Cell[5182, 171, 64, 4, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

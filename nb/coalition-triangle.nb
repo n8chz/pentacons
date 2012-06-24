@@ -1,0 +1,164 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      2843,        109]*)
+(*NotebookOutlinePosition[      3491,        132]*)
+(*  CellTagsIndexPosition[      3447,        128]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(x^4/8 + 5*x^3/2 + 3*x^2 + x/12\)], "Input"],
+
+Cell[OutputFormData["\<\
+x/12 + 3*x^2 + (5*x^3)/2 + x^4/8\
+\>", "\<\
+ 4      3
+x    5 x       2   x
+-- + ---- + 3 x  + --
+8     2            12\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Factor[Out[1]]\)], "Input"],
+
+Cell[OutputFormData["\<\
+(x*(2 + 72*x + 60*x^2 + 3*x^3))/24\
+\>", "\<\
+      3       2
+x (3 x  + 60 x  + 72 x + 2)
+---------------------------
+            24\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(x^6/48 + 7*x^5/48 + 17*x^4/48 + 17*x^3/48 + x^2/8\)], "Input"],
+
+Cell[OutputFormData["\<\
+x^2/8 + (17*x^3)/48 + (17*x^4)/48 + (7*x^5)/48 + x^6/48\
+\>", "\<\
+ 6      5       4       3    2
+x    7 x    17 x    17 x    x
+-- + ---- + ----- + ----- + --
+48    48     48      48     8\
+\>"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Factor[Out[3]]\)], "Input"],
+
+Cell[OutputFormData["\<\
+(x^2*(1 + x)^2*(2 + x)*(3 + x))/48\
+\>", "\<\
+ 2        2
+x  (x + 1)  (x + 2) (x + 3)
+---------------------------
+            48\
+\>"], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"Microsoft Windows 3.0",
+ScreenRectangle->{{0, 800}, {0, 544}},
+WindowSize->{496, 436},
+WindowMargins->{{0, Automatic}, {Automatic, 0}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1731, 51, 63, 1, 30, "Input"],
+Cell[1797, 54, 160, 7, 58, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[1994, 66, 47, 1, 30, "Input"],
+Cell[2044, 69, 174, 7, 58, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2255, 81, 82, 1, 30, "Input"],
+Cell[2340, 84, 230, 7, 58, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2607, 96, 47, 1, 30, "Input"],
+Cell[2657, 99, 170, 7, 58, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+
