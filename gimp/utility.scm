@@ -1,6 +1,6 @@
 ; utility.scm
 
-; http://geocities.com/n8chz/utitilty.txt
+; http://geocities.ws/n8chz/utitilty.txt
 
 ; This file is ungoverned
 ; by the Cypherpunks' Anti-License.
